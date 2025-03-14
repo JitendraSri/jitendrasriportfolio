@@ -610,3 +610,52 @@ footer {
     transform: scale(1.05);
     box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
 }
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    body.index .intro, 
+    body.index .profile-image {
+        max-width: 100%;
+        text-align: center;
+    }
+    body.index .profile-image img {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    body.index .intro h1 {
+        font-size: 32px;
+    }
+    body.index .intro h2 {
+        font-size: 24px;
+    }
+    body.index .intro p {
+        font-size: 16px;
+    }
+    .project-box {
+        width: 100%;
+    }
+}
