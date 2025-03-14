@@ -94,6 +94,7 @@ body:not(.index) main {
     width: 90%;
     max-width: 1200px;
     flex-wrap: wrap;
+    
 }
 
 /* Text section */
@@ -153,7 +154,7 @@ body.index .profile-image img {
     z-index: 1;
     position: relative;
     bottom: -78px; /* Ensures image touches footer red line */
-    left: -33px; /* Moves the image 3px to the left */
+    left: -33px; /* Moves the image 33px to the left */
 }
 
 
@@ -658,4 +659,116 @@ footer {
     .project-box {
         width: 100%;
     }
+}
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px 10px; /* Reduced padding */
+    }
+    body.index .intro, 
+    body.index .profile-image {
+        max-width: 100%;
+        text-align: center;
+    }
+    body.index .profile-image img {
+        width: 80%;
+        max-width: 300px;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    }
+    .projects-container {
+        padding: 20px; /* Reduced padding for mobile */
+    }
+    .project-box {
+        width: 100%; /* Make project boxes full width */
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 per row */
+    }
+    body.index .intro h1 {
+        font-size: 26px; /* Adjusted font size for mobile */
+    }
+    body.index .intro h2 {
+        font-size: 20px; /* Adjusted font size for mobile */
+    }
+    body.index .intro p {
+        font-size: 14px; /* Adjusted font size for mobile */
+    }
+    .project-box {
+        width: 100%; /* Full width for projects */
+        padding: 15px; /* Reduced padding for smaller screens */
+    }
+    .experience-box, .certificate-box {
+        width: 100%; /* Ensure boxes are full width */
+    }
+    .contact-container {
+        padding: 20px; /* Less padding for contact */
+    }
+}
+
+/* For the footer */
+footer {
+    padding: 15px; /* Reduced padding for mobile */
+}
+
+/* Additional styles if needed for smaller screens can go here */
+/* Image styling adjustments for better responsiveness */
+body.index .profile-image img {
+    width: 100%; /* Make image full width */
+    max-width: 350px; /* Constrain maximum size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    position: relative;
+    bottom: -78px; /* This might need adjustment depending on layout */
+    left: -33px; /* This could also be adjusted */
+}
+
+/* Additional adjustments for responsive image handling */
+.profile-image {
+    flex: 1; /* Ensure it takes up available space */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: flex-end; /* Align image at the end */
+    margin-right: 3px; /* Keep this if you want space on the right */
+}
+
+/* Responsive adjustments for images in different pages */
+@media (max-width: 768px) {
+    body.index .profile-image img {
+        width: 80%; /* Make image responsive in smaller screens */
+        max-width: 80%; /* Adjust as necessary */
+        left: 0; /* Reset left adjustment for better centering */
+        bottom: -50px; /* Adjust bottom positioning for layout improvement */
+    }
+}
+
+@media (max-width: 500px) {
+    body.index .profile-image img {
+        width: 90%; /* Allow for more spacing on mobile */
+        max-width: 90%; /* Constrain maximum size */
+        bottom: -40px; /* Fine-tune positioning */
+    }
+}
+body.index .profile-image img {
+    object-fit: cover; /* This will fill the area, cropping as needed. Change to contain if you want to fit within the area */
 }
